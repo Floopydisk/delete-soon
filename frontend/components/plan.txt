@@ -1,0 +1,37 @@
+Phase 1: Backend Foundation (Roles & Authorization)
+  1.  Update User Model: Add a role field to the User schema (superAdmin, admin, pastorate).
+  2.  Seed Database: Create a script to seed the database with users representing each role for testing.
+  3.  Implement RBAC Middleware: Create backend middleware to protect API routes based on user roles.
+
+
+  Phase 2: Backend API Endpoints
+  1.  User Management API: Create secure API endpoints for superAdmin to perform CRUD (Create, Read, Update, Delete) operations on users.
+  2.  Role-Aware Form Fetching API: Modify the existing form-fetching endpoints to filter data based on the logged-in user's role (e.g.,
+  a pastorate user should only see forms assigned to their zone).
+
+
+  Phase 3: Frontend UI & Route Protection
+  1.  Admin Layout: Ensure a consistent and secure layout for all admin pages.
+  2.  Frontend Auth Wrapper: Enhance the frontend authentication logic to be role-aware, protecting pages and UI components based on the
+  user's role.
+  3.  Admin Pages:
+         Dashboard (`/admin/dashboard`):* A landing page displaying statistics and summaries.
+         Submissions (`/admin/management/submissions`):* A page to view, filter, and manage all form submissions.
+         User Management (`/admin/management/users`):* A page for superAdmin to manage users.
+
+
+  Phase 4: Notification System
+  1.  Backend Notification Logic: Enhance the backend to create notifications in the database whenever a form is submitted, targeting the
+  appropriate pastorate user.
+  2.  Notification Center UI: Build a component in the admin header to display unread notifications and a dedicated page to view all
+  notifications.
+
+
+
+Now the admin pages should exist in a /admin route. The included pages should have a fully functional role exclusive dashboards.
+Create multiple roles;
+    superAdmin (can access any route and any function and can modify existing users and their data. can also create admins and new users.)
+    admin (can view stats, summaries, forms and associated data)
+    pastorate (can access forms and data designated to them (the forms have input fields for zonal coordinators or other positions))
+
+    There's also going to be an integrated notification system (will eventually add emails) for the corresponding pastors/coordinators to notify them of when a form is filled and their userId/name was selected/assigned

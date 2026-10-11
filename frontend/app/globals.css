@@ -1,0 +1,153 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to match Daystar branding with dark navy, purple gradients, and red accents */
+  --background: oklch(0.99 0.005 240); /* Clean white background #fdfdfe */
+  --foreground: oklch(0.15 0.02 240); /* Dark navy text #0f172a */
+  --card: oklch(1 0 0); /* Pure white cards #ffffff */
+  --card-foreground: oklch(0.15 0.02 240); /* Dark navy text #0f172a */
+  --popover: oklch(1 0 0); /* Pure white #ffffff */
+  --popover-foreground: oklch(0.15 0.02 240); /* Dark navy text #0f172a */
+  --primary: oklch(0.45 0.15 285); /* Daystar purple #7c3aed */
+  --primary-foreground: oklch(1 0 0); /* White text #ffffff */
+  --secondary: oklch(0.96 0.01 240); /* Very light gray #f8fafc */
+  --secondary-foreground: oklch(0.15 0.02 240); /* Dark navy #0f172a */
+  --muted: oklch(0.97 0.005 240); /* Light gray #f9fafb */
+  --muted-foreground: oklch(0.45 0.01 240); /* Medium gray #64748b */
+  --accent: oklch(0.55 0.22 25); /* Daystar red #dc2626 */
+  --accent-foreground: oklch(1 0 0); /* White text #ffffff */
+  --destructive: oklch(0.55 0.22 25); /* Red #dc2626 */
+  --destructive-foreground: oklch(1 0 0); /* White text #ffffff */
+  --border: oklch(0.92 0.005 240); /* Light border #e2e8f0 */
+  --input: oklch(0.92 0.005 240); /* Light border #e2e8f0 */
+  --ring: oklch(0.45 0.15 285 / 0.5); /* Purple focus ring */
+  --chart-1: oklch(0.45 0.15 285); /* Purple */
+  --chart-2: oklch(0.55 0.22 25); /* Red */
+  --chart-3: oklch(0.15 0.02 240); /* Dark navy */
+  --chart-4: oklch(0.65 0.12 285); /* Light purple */
+  --chart-5: oklch(0.7 0.18 25); /* Light red */
+  --radius: 0.5rem;
+  /* Dark navy sidebar to match header */
+  --sidebar: oklch(0.15 0.02 240); /* Dark navy sidebar #0f172a */
+  --sidebar-foreground: oklch(0.95 0.005 240); /* Light text #f8fafc */
+  --sidebar-primary: oklch(0.55 0.22 25); /* Red primary #dc2626 */
+  --sidebar-primary-foreground: oklch(1 0 0); /* White text #ffffff */
+  --sidebar-accent: oklch(0.2 0.02 240); /* Slightly lighter navy #1e293b */
+  --sidebar-accent-foreground: oklch(0.95 0.005 240); /* Light text #f8fafc */
+  --sidebar-border: oklch(0.25 0.02 240); /* Navy border #334155 */
+  --sidebar-ring: oklch(0.55 0.22 25 / 0.5); /* Red focus ring */
+  /* Added header colors for dark navy header */
+  --header: oklch(0.15 0.02 240); /* Dark navy header #0f172a */
+  --header-foreground: oklch(0.95 0.005 240); /* Light text #f8fafc */
+  --header-accent: oklch(0.55 0.22 25); /* Red accent #dc2626 */
+  /* Added gradient colors for hero sections */
+  --gradient-start: oklch(0.35 0.18 285); /* Deep purple #6d28d9 */
+  --gradient-end: oklch(0.55 0.15 285); /* Medium purple #8b5cf6 */
+}
+
+.dark {
+  /* Updated dark mode to maintain Daystar branding */
+  --background: oklch(0.08 0.02 240); /* Dark background */
+  --foreground: oklch(0.95 0.005 240); /* Light text */
+  --card: oklch(0.12 0.02 240); /* Dark cards */
+  --card-foreground: oklch(0.95 0.005 240); /* Light text */
+  --popover: oklch(0.12 0.02 240); /* Dark popover */
+  --popover-foreground: oklch(0.95 0.005 240); /* Light text */
+  --primary: oklch(0.55 0.15 285); /* Lighter purple */
+  --primary-foreground: oklch(0.08 0.02 240); /* Dark text */
+  --secondary: oklch(0.15 0.02 240); /* Dark secondary */
+  --secondary-foreground: oklch(0.95 0.005 240); /* Light text */
+  --muted: oklch(0.15 0.02 240); /* Dark muted */
+  --muted-foreground: oklch(0.65 0.01 240); /* Medium text */
+  --accent: oklch(0.65 0.22 25); /* Lighter red */
+  --accent-foreground: oklch(0.08 0.02 240); /* Dark text */
+  --destructive: oklch(0.65 0.22 25); /* Lighter red */
+  --destructive-foreground: oklch(0.95 0.005 240); /* Light text */
+  --border: oklch(0.2 0.02 240); /* Dark border */
+  --input: oklch(0.2 0.02 240); /* Dark input */
+  --ring: oklch(0.55 0.15 285 / 0.5); /* Purple ring */
+  --sidebar: oklch(0.1 0.02 240); /* Darker sidebar */
+  --sidebar-foreground: oklch(0.95 0.005 240); /* Light text */
+  --sidebar-primary: oklch(0.65 0.22 25); /* Lighter red */
+  --sidebar-primary-foreground: oklch(0.08 0.02 240); /* Dark text */
+  --sidebar-accent: oklch(0.15 0.02 240); /* Dark accent */
+  --sidebar-accent-foreground: oklch(0.95 0.005 240); /* Light text */
+  --sidebar-border: oklch(0.2 0.02 240); /* Dark border */
+  --sidebar-ring: oklch(0.65 0.22 25 / 0.5); /* Red ring */
+  --header: oklch(0.1 0.02 240); /* Darker header */
+  --header-foreground: oklch(0.95 0.005 240); /* Light text */
+  --header-accent: oklch(0.65 0.22 25); /* Lighter red */
+  --gradient-start: oklch(0.25 0.18 285); /* Darker purple */
+  --gradient-end: oklch(0.45 0.15 285); /* Medium purple */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  /* Added header and gradient color tokens */
+  --color-header: var(--header);
+  --color-header-foreground: var(--header-foreground);
+  --color-header-accent: var(--header-accent);
+  --color-gradient-start: var(--gradient-start);
+  --color-gradient-end: var(--gradient-end);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Added utility classes for Daystar branding */
+@layer utilities {
+  .bg-daystar-gradient {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    position: relative;
+    background-image: url('../public/images/hero.jpg'), linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
+}

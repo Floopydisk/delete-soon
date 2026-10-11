@@ -1,0 +1,6 @@
+{
+  "name": "Daystar Forms Portal",
+  "description": "Digital Forms Portal for Daystar Christian Centre, supporting Courtship, Burial, and Child Naming applications with administrative review workflows.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
