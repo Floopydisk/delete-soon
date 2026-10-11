@@ -48,68 +48,50 @@ export default function AdminPage() {
 
   if (error === "unauthorized") {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 p-4">
-        <Card className="max-w-md w-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-red-600">
-              <ShieldAlert className="h-6 w-6" />
-              Authentication Required
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <Alert variant="destructive">
-              <AlertTitle>Access Denied</AlertTitle>
-              <AlertDescription>
-                You need to be logged in to access the admin area. Redirecting
-                to login...
-              </AlertDescription>
-            </Alert>
-            <Button
-              onClick={() => router.push("/admin/login")}
-              className="w-full"
-            >
-              Go to Login
-            </Button>
-          </CardContent>
-        </Card>
+      <div className="min-h-screen flex items-center justify-center bg-[#edeef5] p-4 text-[#091122]">
+        <div className="max-w-md w-full bg-white/85 backdrop-blur-xl rounded-[32px] p-8 shadow-xl border border-white/90 text-center">
+          <div className="w-14 h-14 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center mx-auto mb-4">
+            <ShieldAlert className="w-7 h-7" />
+          </div>
+          <h2 className="text-xl font-extrabold text-[#091122]">
+            Authentication Required
+          </h2>
+          <p className="text-xs text-slate-500 mt-2 mb-6">
+            You need to be signed in to access the Daystar Forms Operations Hub.
+            Redirecting to login...
+          </p>
+          <Button
+            onClick={() => router.push("/admin/login")}
+            className="w-full bg-[#091122] hover:bg-[#1a2942] text-white rounded-2xl py-3 text-xs font-bold"
+          >
+            Sign In Now
+          </Button>
+        </div>
       </div>
     );
   }
 
   if (error === "not-admin") {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 p-4">
-        <Card className="max-w-md w-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-amber-600">
-              <Construction className="h-6 w-6" />
-              User Dashboard Under Construction
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <Alert>
-              <AlertTitle>Coming Soon!</AlertTitle>
-              <AlertDescription>
-                Your personalized dashboard is currently under construction. In
-                the meantime, you can submit forms from the home page.
-              </AlertDescription>
-            </Alert>
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <p className="text-sm text-blue-800 mb-2">
-                <strong>Note:</strong> Only administrators can access the admin
-                dashboard.
-              </p>
-              <p className="text-sm text-blue-700">
-                If you believe you should have admin access, please contact your
-                system administrator.
-              </p>
-            </div>
-            <Button onClick={() => router.push("/")} className="w-full">
-              <Home className="mr-2 h-4 w-4" />
-              Go to Home Page
-            </Button>
-          </CardContent>
-        </Card>
+      <div className="min-h-screen flex items-center justify-center bg-[#edeef5] p-4 text-[#091122]">
+        <div className="max-w-md w-full bg-white/85 backdrop-blur-xl rounded-[32px] p-8 shadow-xl border border-white/90 text-center">
+          <div className="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center mx-auto mb-4">
+            <Construction className="w-7 h-7" />
+          </div>
+          <h2 className="text-xl font-extrabold text-[#091122]">
+            Restricted Ministerial Access
+          </h2>
+          <p className="text-xs text-slate-500 mt-2 mb-6">
+            Only authorized pastorate members and system administrators can access this portal area.
+          </p>
+          <Button
+            onClick={() => router.push("/")}
+            className="w-full bg-[#091122] hover:bg-[#1a2942] text-white rounded-2xl py-3 text-xs font-bold"
+          >
+            <Home className="mr-2 h-4 w-4" />
+            Return to Public Portal
+          </Button>
+        </div>
       </div>
     );
   }
